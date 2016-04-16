@@ -1,0 +1,8 @@
+#!/bin/bash
+
+FILES=($@)
+for f in ${FILES[@]}
+do
+    echo "strip trailing blanks for $f"
+    sed -i 's/[ \t]*$//' $f
+done

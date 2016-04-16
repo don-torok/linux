@@ -1,0 +1,87 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+
+import psycopg2
+import sys
+import getopt
+
+def usage():
+	print( 'execute.py [--debug] --user <user> ' \
+	+ '--password <password> --file fileToRun ' )
+
+def main( argv ):
+
+    conn = None
+    user      = ''
+    password  = ''
+    database  = ''
+    runFile   = ''
+    debug     = False
+
+    try:
+        opts, args = getopt.getopt( argv, "", ["debug", "user=", "password=", "file="] )
+
+    except getopt.GetoptError as err:
+        print ( err )
+        usage()
+        sys.exit(2)
+
+    for opt, arg in opts:
+        if opt == "--debug":
+            debug = True
+        elif opt == "--password":
+            password = arg
+        elif opt == "--user":
+            user = arg    
+        elif opt == "--file":
+            runFile = arg    
+        else:
+            usage()
+            sys.exit()
+
+    if not runFile or not user or not password:
+        usage()
+        sys.exit(2)
+
+    try:
+        file = open( runFile, 'r' )
+    except:
+        print( 'Failed to open ' + runFile )
+        sys.exit(1)
+
+    try:
+     
+        conn = psycopg2.connect( database="truven"
+                                 , user="dtorok"
+                                 , password="alGorithm99"
+                                 , host="omop-datasets.cqlmv7nlakap.us-east-1.redshift.amazonaws.com"
+                                 , port="5439"
+                                 ) 
+#    conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT) 
+        cur = conn.cursor()
+
+        statements = file.read()
+
+        for statement in statements.split( ';' ):
+            if not statement.strip():
+                break
+
+            if debug:
+                print( statement )
+
+            cur.execute(statement)          
+#        ver = cur.fetchone()
+#        print ver    
+            cur.execute( 'commit' )
+        
+    except psycopg2.DatabaseError, e:
+        print 'Error %s' % e    
+        sys.exit(1)
+    
+    finally:
+        if conn:
+            conn.close()
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])

@@ -1,0 +1,149 @@
+#!/usr/local/bin/python
+# -*- coding: utf-8 -*-
+#
+# Revision log
+# Who     When     What
+# dtk   10Jul2015  made copy to and from command line arguments
+#
+import psycopg2
+import sys
+import pprint
+import getopt
+import smtplib
+from email.mime.text import MIMEText
+
+def usage():
+	print( 'copyData.py [--debug] [--target <omop|ephir> defaults to ephir]'
+               + ' --copyTo <name of target table>'
+               + ' --copyFrom <s3 source file>'
+               + ' [--delimiter \'X\'] [--dateFormat MM/DD/YYYY] [--ignoreHeader] [--gzip] ' )
+
+def main( argv ):
+        conn = None
+        copyFrom = None
+        copyTo   = None
+        debug    = False
+        email    = False
+        gzip     = False
+        delimiter = None
+        dateFormat = None
+        ignoreHeader = False
+        target = 'ephir'
+        
+        try:
+	        opts, args = getopt.getopt( argv, "", ["debug", "target=", "copyTo=", "copyFrom=", "delimiter=", "dateFormat=", "ignoreHeader", "gzip"] )
+                
+        except getopt.GetoptError as err:
+                print ( err )
+	        usage()
+	        sys.exit(2)
+                
+        for opt, arg in opts:
+                if opt == "--debug":
+	                debug = True
+                elif opt == '--email':
+                        email = True
+	        elif opt == "--copyTo":
+       	                copyTo = arg
+	        elif opt == "--copyFrom":
+       	                copyFrom = arg    
+	        elif opt == "--gzip":
+       	                gzip = True    
+	        elif opt == "--delimiter":
+       	                delimiter = arg
+	        elif opt == "--ignoreHeader":
+       	                ignoreHeader = True                    
+	        elif opt == "--dateFormat":
+       	                dateFormat = arg
+	        elif opt == "--target":
+       	                target = arg
+	        else:
+                        print( "Invalid parameter '" + opt + "'\n\n" )
+       	                usage()
+       	                sys.exit()
+
+        if copyTo is None or copyFrom is None:
+                print('copyTo or copyFrom not defined\n\n' )    
+                usage()
+	        sys.exit(2)
+
+        if target == "ephir":
+                conn = psycopg2.connect( database="ims"
+                                         , user="dtorok"
+                                         , password="password"
+                                         , host="rs-ims.cra03mppdtga.us-east-1.redshift.amazonaws.com"
+                                         , port="5439")
+        elif target == "omop":
+                conn = psycopg2.connect( database="truven"
+                                         , user="dtorok"
+                                         , password="password"
+                                         , host="omop-datasets.cqlmv7nlakap.us-east-1.redshift.amazonaws.com"
+                                         , port="5439") 
+        else:
+                print( "target: '" + target + "' not defined" )
+                usage()
+	        sys.exit(2)
+
+
+        try:
+
+
+        # with out autocommit, script runs, but no row in tablesq
+                conn.autocommit = True
+                cur = conn.cursor()
+
+                command = "copy %s from '%s' " % ( copyTo, copyFrom )
+                command += "CREDENTIALS " \
+                           + "'aws_access_key_id=XXXXXXXXXXXXXXXXXXXXXXXX" \
+                           + "aws_secret_access_key=YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY'" \
+			   + " BLANKSASNULL"
+        
+                if delimiter is not None:
+                        command += " DELIMITER '" + str( delimiter ) + "'"
+                if dateFormat is not None:
+                        command += " DATEFORMAT '" + str( dateFormat ) + "'"
+                if ignoreHeader:
+                        command += " ignoreHeader 1 "
+                if gzip:
+                        command += ' gzip'
+                
+
+                print( command )
+
+                if not debug:
+                        cur.execute( command )
+        
+                        conn.commit
+            
+                if email:
+                        msg = MIMEText( 'Copy committed' )
+                        msg['Subject'] = 'Copy S3 to Redshift'
+                        msg['From']    = 'dtorok2@gmail.com'
+                        msg['To']      = 'dtorok2@gmail.com'
+                        s = smtplib.SMTP('localhost')
+                        s.sendmail( 'dtorok2@gmail.com', ['dtorok2@gmail.com'], msg.as_string() )
+                        s.quit()
+        
+        except psycopg2.DatabaseError, e:
+                errorText = e.pgerror
+                print '%s' % e.pgerror
+                if email:
+                        msg = MIMEText( 'Copy failed ' + errorText )
+                        msg['Subject'] = 'Copy S3 to Redshift'
+                        msg['From']    = 'torok@omop.org'
+                        msg['To']      = 'torok@omop.org'
+                        s = smtplib.SMTP('localhost')
+                        s.sendmail( 'torok@omop.org', ['torok@omop.org'], msg.as_string() )
+                        s.quit()
+                        sys.exit(1)
+        
+        
+        finally:
+        
+                if conn:
+                        conn.close()
+
+            
+if __name__ == "__main__":
+	main(sys.argv[1:])
+

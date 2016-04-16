@@ -1,0 +1,20 @@
+{
+  "entries": [
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0000_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0001_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0002_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0003_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0004_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0005_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0006_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0007_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0008_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0009_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0010_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0011_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0012_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0013_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0014_part_00.gz"},
+    {"url":"s3://dtk-transfer/vocabulary_4_5/concept_0015_part_00.gz"}
+  ]
+}

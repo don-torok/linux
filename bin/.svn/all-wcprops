@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/3266/Users/dTorok/bin
+END
+redShiftSQL.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3488/Users/dTorok/bin/redShiftSQL.py
+END
+loop.sh
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/3266/Users/dTorok/bin/loop.sh
+END
+snapshot_auburn.sh
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3266/Users/dTorok/bin/snapshot_auburn.sh
+END
+stripTrailingBlanks
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3488/Users/dTorok/bin/stripTrailingBlanks
+END
+OMOP_check_for_impaired_volume.sh
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/3266/Users/dTorok/bin/OMOP_check_for_impaired_volume.sh
+END
+setupEC2Prod.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3266/Users/dTorok/bin/setupEC2Prod.sh
+END
+add_aws_tags.sh
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3266/Users/dTorok/bin/add_aws_tags.sh
+END
+vconvert.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3521/Users/dTorok/bin/vconvert.py
+END
+createOVM.sh
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3266/Users/dTorok/bin/createOVM.sh
+END
+impaired.temp
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3266/Users/dTorok/bin/impaired.temp
+END
+nohup.out
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3266/Users/dTorok/bin/nohup.out
+END
+list_auburn.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3266/Users/dTorok/bin/list_auburn.sh
+END
+setupEC2Dev.sh
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3266/Users/dTorok/bin/setupEC2Dev.sh
+END
+redShiftCDMCount.sql
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3488/Users/dTorok/bin/redShiftCDMCount.sql
+END
+sendMail.sh
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/3266/Users/dTorok/bin/sendMail.sh
+END
+listAuburnBackups.sh
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3266/Users/dTorok/bin/listAuburnBackups.sh
+END
+OMOP_Auburn_snapshot_check.sh
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/3266/Users/dTorok/bin/OMOP_Auburn_snapshot_check.sh
+END
+timing.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/3488/Users/dTorok/bin/timing.py
+END

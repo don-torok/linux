@@ -1,0 +1,117 @@
+SELECT 'GE_CDM4' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM GE_CDM4.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'CCAE_CDM4' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM CCAE_CDM4.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'CCAE_CDM4_06_12' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM CCAE_CDM4_06_12.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'CDM4_ETALON' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM CDM4_ETALON.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'GE_CDM4_2003_2012' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM GE_CDM4_2003_2012.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'GE_CDM4_MR' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM GE_CDM4_MR.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'MDCD_CDM4' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM MDCD_CDM4.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'MDCR_CDM4' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM MDCR_CDM4.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^
+SELECT 'MSLR_CDM4' ||chr(9)|| year || chr(9) || count( distinct person_id )
+  FROM
+     ( SELECT year, to_date( '01-jan-' || year, 'dd-mon-yyyy' ) AS year_start
+            , to_date( '31-dec-' || year, 'dd-mon-yyyy'  ) AS year_end
+         FROM dtorok.year
+     )
+  LEFT OUTER JOIN
+    ( SELECT person_id, observation_period_start_date, observation_period_end_date
+        FROM MSLR_CDM4.observation_period
+    ) ON observation_period_start_date <= year_end
+     AND observation_period_end_date   >= year_start
+  GROUP BY year order by year;
+^

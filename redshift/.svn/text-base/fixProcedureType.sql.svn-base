@@ -1,0 +1,43 @@
+UPDATE cprd_test.procedure_occurrence 
+SET procedure_type_concept_id 
+   = CASE COALESCE( p_order, 15 )
+      WHEN  1
+       THEN 38000251         
+       WHEN 2
+       THEN 38000252    
+       WHEN 3
+       THEN 38000253    
+       WHEN 4
+       THEN 38000254
+       WHEN 5
+       THEN 38000255
+       WHEN 6
+       THEN 38000256
+       WHEN 7
+       THEN 38000257
+       WHEN 8
+       THEN 38000258
+       WHEN 9
+       THEN 38000259
+       WHEN 10
+       THEN 38000260
+       WHEN 11
+       THEN 38000261
+       WHEN 12
+       THEN 38000262
+       WHEN 13
+       THEN 38000263
+       WHEN 14
+       THEN 38000264
+       ELSE 38000265
+  END
+FROM 
+   ( SELECT patId, evDate, OPCS, max( p_order ) AS p_order
+       FROM cprd_src_2013.hes_procedures_epi
+      GROUP BY  patId, evDate, OPCS
+   )
+WHERE patId = person_id
+  AND evDate = procedure_date
+  AND OPCS   = procedure_source_value 
+  AND procedure_type_concept_id = 0 and person_id = 1124;
+  

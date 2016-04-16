@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/3482/Users/dTorok/redshift
+END
+connect.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3482/Users/dTorok/redshift/connect.py
+END
+sendMail.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3482/Users/dTorok/redshift/sendMail.py
+END
+devSQL.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3531/Users/dTorok/redshift/devSQL.py
+END
+vacuum.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3482/Users/dTorok/redshift/vacuum.py
+END
+copyDataDev.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/3531/Users/dTorok/redshift/copyDataDev.py
+END
+analyze.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3482/Users/dTorok/redshift/analyze.py
+END
+insert.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3482/Users/dTorok/redshift/insert.py
+END
+copyData.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3539/Users/dTorok/redshift/copyData.py
+END
+sql.sql
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3531/Users/dTorok/redshift/sql.sql
+END
+test.txt
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/3482/Users/dTorok/redshift/test.txt
+END
+fixProcedureType.sql
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/3482/Users/dTorok/redshift/fixProcedureType.sql
+END
+connect2.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/3482/Users/dTorok/redshift/connect2.py
+END
+getLoadErrors.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3482/Users/dTorok/redshift/getLoadErrors.py
+END
+devSQLTabOut.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3531/Users/dTorok/redshift/devSQLTabOut.py
+END
+longterm_era.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/3531/Users/dTorok/redshift/longterm_era.py
+END
+sqlTabOut.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3531/Users/dTorok/redshift/sqlTabOut.py
+END
+executeSQL.py.save
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/3482/Users/dTorok/redshift/executeSQL.py.save
+END
+test.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/3482/Users/dTorok/redshift/test.py
+END
+executeSQL.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/3531/Users/dTorok/redshift/executeSQL.py
+END
+getUnload.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/3531/Users/dTorok/redshift/getUnload.py
+END
+vacuum2.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/3482/Users/dTorok/redshift/vacuum2.py
+END
+unload.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/3531/Users/dTorok/redshift/unload.py
+END
+inpatient_era.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/3531/Users/dTorok/redshift/inpatient_era.py
+END
